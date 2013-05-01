@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>com.apple.security.print</key>
+	<string>Alow printing</string>
+	<key>com.apple.security.personal-information.location</key>
+	<string>Use of the Core Location framework for determining the computer’s geographical location</string>
+	<key>com.apple.security.personal-information.calendars</key>
+	<string>Read/write access to the user’s calendars</string>
+	<key>com.apple.security.personal-information.addressbook</key>
+	<string>Read/write access to contacts in the user’s address book; allows apps to infer the default address book if more than one is present on a system</string>
+	<key>com.apple.security.network.server</key>
+	<string>Incoming network socket for listening for requests from other machines</string>
+	<key>com.apple.security.network.client</key>
+	<string>Outgoing network socket for connecting to other machines</string>
+	<key>com.apple.security.inherit</key>
+	<string>Child process inheritance of the parent’s sandbox</string>
+	<key>com.apple.security.files.bookmarks.document-scope</key>
+	<string>Use of document-scoped bookmarks and URLs</string>
+	<key>com.apple.security.files.bookmarks.app-scope</key>
+	<string>Use of app-scoped bookmarks and URLs</string>
+	<key>com.apple.security.files.downloads.read-write</key>
+	<string>Read/write access to the user’s Downloads folder</string>
+	<key>com.apple.security.device.usb</key>
+	<string>Interaction with USB devices, including HID devices such as joysticks</string>
+	<key>com.apple.security.device.serial</key>
+	<string>Interaction with serial devices</string>
+	<key>com.apple.security.device.microphone</key>
+	<string>Recording of audio using the built-in microphone, if available, along with access to audio input using any Core Audio API that supports audio input</string>
+	<key>com.apple.security.device.firewire</key>
+	<string>Interaction with FireWire devices (currently, does not support interaction with audio/video devices such as DV cameras)</string>
+	<key>com.apple.security.device.camera</key>
+	<string>Capture of movies and still images using the built-in camera, if available</string>
+	<key>com.apple.security.device.bluetooth</key>
+	<string>Interaction with Bluetooth devices</string>
+	<key>com.apple.security.assets.pictures.read-write</key>
+	<string>Read/write access to the user’s Pictures folder</string>
+	<key>com.apple.security.assets.pictures.read-only</key>
+	<string>Read-only access to the user’s Pictures folder</string>
+	<key>com.apple.security.assets.music.read-write</key>
+	<string>Read/write access to the user’s Music folder</string>
+	<key>com.apple.security.assets.music.read-only</key>
+	<string>Read-only access to the user’s Music folder</string>
+	<key>com.apple.security.assets.movies.read-write</key>
+	<string>Read/write access to the user’s Movies folder and iTunes movies</string>
+	<key>com.apple.security.app-sandbox</key>
+	<string>This application is sandboxed</string>
+	<key>com.apple.security.files.user-selected.read-only</key>
+	<string>Read-only access to files the user has selected using an Open or Save dialog</string>
+	<key>com.apple.security.files.user-selected.read-write</key>
+	<string>Read/write access to files the user has selected using an Open or Save dialog</string>
+	<key>com.apple.security.assets.movies.read-only</key>
+	<string>Read-only access to the user’s Movies folder and iTunes movies</string>
+</dict>
+</plist>

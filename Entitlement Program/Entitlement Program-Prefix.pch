@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'Entitlement Program' target in the 'Entitlement Program' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif

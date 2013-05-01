@@ -79,6 +79,15 @@
         NSDictionary *entitlementDict = [NSDictionary dictionaryWithContentsOfFile:tempFile];
         NSDictionary *entitlementKeys = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"entitlementKeys" ofType:@"plist" ]];
         
+        NSArray *appKeys = [entitlementDict allKeys];
+        NSMutableDictionary *finalDict = [[NSMutableDictionary alloc] init];
+        
+        for (NSString *key in appKeys) {
+            [finalDict  setValue:[entitlementKeys valueForKey:key] forKey:key];
+        }
+        
+        
+        return finalDict;
         
     } else {
         NSLog(@"%@ is not sandboxed", [appPath lastPathComponent]);

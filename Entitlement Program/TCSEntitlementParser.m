@@ -61,7 +61,7 @@
     
     // Create a task
     NSTask *codesign = [[NSTask alloc] init];
- 
+    
     // Get the temp file
     NSString *tempFile = [NSString stringWithFormat:@"%@/%@.plist", self.tempPath, [self getUUID]];
     
@@ -73,16 +73,17 @@
     // Launch the task
     [codesign launch];
     [codesign waitUntilExit];
-  
+    
     // Build and return our dictionary if we made it.
     if (tempFile) {
         NSDictionary *entitlementDict = [NSDictionary dictionaryWithContentsOfFile:tempFile];
-        NSDictionary *entitlementKeys = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"entitlementKeys" ofType:@"plist" ]];
+        NSDictionary *entitlementKeys = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle]
+                                                                                    pathForResource:@"entitlementKeys" ofType:@"plist" ]];
         
         NSArray *appKeys = [entitlementDict allKeys];
         NSMutableDictionary *finalDict = [[NSMutableDictionary alloc] init];
         
-        [appKeys enumerateObjectsWithOptions:nil usingBlock:^(id obj, NSUInteger idx, BOOL *stop){
+        [appKeys enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(id obj, NSUInteger idx, BOOL *stop){
             
             for (NSString *key in [entitlementKeys allKeys]) {
                 
@@ -100,8 +101,6 @@
             
             
         } ];
-
-        
         
         return finalDict;
         
@@ -109,8 +108,8 @@
         NSLog(@"%@ is not sandboxed", [appPath lastPathComponent]);
         return nil;
     }
-
-
+    
+    
     
 }
 

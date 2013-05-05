@@ -23,10 +23,10 @@
 
 - (IBAction)refreshButton:(id)sender {
     
-    NSString *appPath = @"/Applications/The Unarchiver.app";
+    NSString *appPath = @"/Applications/Safari.app";
     
     TCSEntitlementParser *task = [[TCSEntitlementParser alloc] init];
     
-    [task listEntitlementsForAppPath:appPath];
+    self.entitlementList = [task listEntitlementsForAppPath:appPath];
 }
 @end

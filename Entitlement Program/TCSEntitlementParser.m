@@ -82,9 +82,25 @@
         NSArray *appKeys = [entitlementDict allKeys];
         NSMutableDictionary *finalDict = [[NSMutableDictionary alloc] init];
         
-        for (NSString *key in appKeys) {
-            [finalDict  setValue:[entitlementKeys valueForKey:key] forKey:key];
-        }
+        [appKeys enumerateObjectsWithOptions:nil usingBlock:^(id obj, NSUInteger idx, BOOL *stop){
+            
+            for (NSString *key in [entitlementKeys allKeys]) {
+                
+                if ([key isEqualToString:obj]) {
+                    [finalDict  setValue:[entitlementKeys valueForKey:obj] forKey:obj];
+                    break;
+                    
+                } else {
+                    if ([key isEqualToString:[[entitlementKeys allKeys] lastObject]]) {
+                        [finalDict setValue:@"Custom Key" forKey:obj];
+                        
+                    }
+                }
+            }
+            
+            
+        } ];
+
         
         
         return finalDict;

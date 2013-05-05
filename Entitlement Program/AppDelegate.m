@@ -17,13 +17,13 @@
     
     TCSEntitlementParser *task = [[TCSEntitlementParser alloc] init];
     
-    [task listEntitlementsForAppPath:appPath];
+    self.entitlementList = [task listEntitlementsForAppPath:appPath];
 
 }
 
 - (IBAction)refreshButton:(id)sender {
     
-    NSString *appPath = @"/Applications/Safari.app";
+    NSString *appPath = @"/Applications/The Unarchiver.app";
     
     TCSEntitlementParser *task = [[TCSEntitlementParser alloc] init];
     

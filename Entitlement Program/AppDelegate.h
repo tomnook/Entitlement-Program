@@ -11,7 +11,11 @@
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
+@property NSDictionary *entitlementList;
+
 @property (assign) IBOutlet NSWindow *window;
+@property (weak) IBOutlet NSDictionaryController *dictController;
+
 - (IBAction)refreshButton:(id)sender;
 
 @end

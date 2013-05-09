@@ -25,8 +25,6 @@
 - (void)dropHasOcurred:(NSNotification *)notif {
     
     if (!self.task) self.task = [[TCSEntitlementParser alloc] init];
-    
-    
     self.entitlementList = [self.task listEntitlementsForAppPath:[notif userInfo][@"path"]];
 }
 

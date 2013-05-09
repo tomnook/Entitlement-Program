@@ -8,25 +8,26 @@
 
 #import "AppDelegate.h"
 
+@interface AppDelegate ()
+@property TCSEntitlementParser *task;
+@end
+
 
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     
-    NSString *appPath = @"/Applications/The Unarchiver.app";
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dropHasOcurred:) name:DropHasOccurred object:nil];
     
-    TCSEntitlementParser *task = [[TCSEntitlementParser alloc] init];
-    
-    self.entitlementList = [task listEntitlementsForAppPath:appPath];
-
 }
 
-- (IBAction)refreshButton:(id)sender {
+
+- (void)dropHasOcurred:(NSNotification *)notif {
     
-    NSString *appPath = @"/Applications/Safari.app";
+    if (!self.task) self.task = [[TCSEntitlementParser alloc] init];
     
-    TCSEntitlementParser *task = [[TCSEntitlementParser alloc] init];
     
-    self.entitlementList = [task listEntitlementsForAppPath:appPath];
+    self.entitlementList = [self.task listEntitlementsForAppPath:[notif userInfo][@"path"]];
 }
+
 @end

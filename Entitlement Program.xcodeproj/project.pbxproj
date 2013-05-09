@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A204E44173C30E300D55489 /* DropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A204E43173C30E300D55489 /* DropView.m */; };
 		42063E01169E0B2500874F14 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42063E00169E0B2500874F14 /* Cocoa.framework */; };
 		42063E0B169E0B2500874F14 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42063E09169E0B2500874F14 /* InfoPlist.strings */; };
 		42063E0D169E0B2500874F14 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42063E0C169E0B2500874F14 /* main.m */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A204E42173C30E300D55489 /* DropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropView.h; sourceTree = "<group>"; };
+		1A204E43173C30E300D55489 /* DropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropView.m; sourceTree = "<group>"; };
 		42063DFC169E0B2500874F14 /* Entitlement Program.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Entitlement Program.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42063E00169E0B2500874F14 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		42063E03169E0B2500874F14 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -93,6 +96,8 @@
 				42063E07169E0B2500874F14 /* Supporting Files */,
 				42063E1D169E0B9F00874F14 /* TCSEntitlementParser.h */,
 				42063E1E169E0B9F00874F14 /* TCSEntitlementParser.m */,
+				1A204E42173C30E300D55489 /* DropView.h */,
+				1A204E43173C30E300D55489 /* DropView.m */,
 			);
 			path = "Entitlement Program";
 			sourceTree = "<group>";
@@ -178,6 +183,7 @@
 				42063E0D169E0B2500874F14 /* main.m in Sources */,
 				42063E14169E0B2500874F14 /* AppDelegate.m in Sources */,
 				42063E1F169E0B9F00874F14 /* TCSEntitlementParser.m in Sources */,
+				1A204E44173C30E300D55489 /* DropView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

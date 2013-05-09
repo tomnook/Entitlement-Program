@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "TCSEntitlementParser.h"
+#import "DropView.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
@@ -16,6 +17,5 @@
 @property (assign) IBOutlet NSWindow *window;
 @property (weak) IBOutlet NSDictionaryController *dictController;
 
-- (IBAction)refreshButton:(id)sender;
 
 @end

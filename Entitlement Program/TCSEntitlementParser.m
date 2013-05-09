@@ -2,7 +2,7 @@
 //  TCSEntitlementParser.m
 //  Entitlement Program
 //
-//  Created by Twocanoes Software on 1/9/13.
+//  Created by Twocanoes Software
 //  Copyright (c) 2013 Twocanoes Software, Inc. All rights reserved.
 //
 
@@ -75,7 +75,7 @@
     [codesign waitUntilExit];
     
     // Build and return our dictionary if we made it.
-    if (tempFile) {
+    if ([[NSFileManager defaultManager] fileExistsAtPath:tempFile]) {
         NSDictionary *entitlementDict = [NSDictionary dictionaryWithContentsOfFile:tempFile];
         NSDictionary *entitlementKeys = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle]
                                                                                     pathForResource:@"entitlementKeys" ofType:@"plist" ]];
@@ -105,6 +105,17 @@
         return finalDict;
         
     } else {
+        
+        NSAlert *alert = [[NSAlert alloc] init];
+        [alert addButtonWithTitle:@"OK"];
+        [alert addButtonWithTitle:@"Cancel"];
+        [alert setMessageText:@"Uh oh!"];
+        [alert setInformativeText:[NSString stringWithFormat:@"%@ is not using entitlements", [appPath lastPathComponent]]];
+        [alert setAlertStyle:NSWarningAlertStyle];
+        
+        [alert runModal];
+        
+        
         
         NSLog(@"%@ is not sandboxed", [appPath lastPathComponent]);
         return nil;

@@ -2,7 +2,7 @@
 //  AppDelegate.m
 //  Entitlement Program
 //
-//  Created by Twocanoes Software on 1/9/13.
+//  Created by Twocanoes Software
 //  Copyright (c) 2013 Twocanoes Software, Inc. All rights reserved.
 //
 
@@ -26,7 +26,7 @@
 
 - (void)dropHasOcurred:(NSNotification *)notif {
     
-    self.hintHidden = TRUE;
+    self.hintHidden = YES;
     if (!self.task) self.task = [[TCSEntitlementParser alloc] init];
     self.entitlementList = [self.task listEntitlementsForAppPath:[notif userInfo][@"path"]];
 }

@@ -105,6 +105,7 @@
         return finalDict;
         
     } else {
+        
         NSLog(@"%@ is not sandboxed", [appPath lastPathComponent]);
         return nil;
     }

@@ -10,6 +10,7 @@
 
 @interface AppDelegate ()
 @property TCSEntitlementParser *task;
+@property BOOL hintHidden;
 @end
 
 
@@ -17,6 +18,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     
+    self.hintHidden = FALSE;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dropHasOcurred:) name:DropHasOccurred object:nil];
     
 }
@@ -24,6 +26,7 @@
 
 - (void)dropHasOcurred:(NSNotification *)notif {
     
+    self.hintHidden = TRUE;
     if (!self.task) self.task = [[TCSEntitlementParser alloc] init];
     self.entitlementList = [self.task listEntitlementsForAppPath:[notif userInfo][@"path"]];
 }
